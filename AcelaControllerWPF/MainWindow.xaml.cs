@@ -24,5 +24,14 @@ namespace AcelaControllerWPF
         {
             InitializeComponent();
         }
+
+        private void SmartCabViewControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Drakenya.AcelaControllerWPF.ViewModel.SmartCabViewModel smartCabViewModelObject =
+               new Drakenya.AcelaControllerWPF.ViewModel.SmartCabViewModel();
+            smartCabViewModelObject.LoadSmartCabs();
+
+            SmartCabViewControl.DataContext = smartCabViewModelObject;
+        }
     }
 }
